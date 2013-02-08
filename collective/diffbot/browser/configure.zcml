@@ -13,6 +13,10 @@
     image="img/icon.gif"
     />
 
+  <browser:resource
+    name="collective.diffbot.loader.gif"
+    image="img/loader.gif" />
+
   <browser:page
     name="diffbot-controlpanel"
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"

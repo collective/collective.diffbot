@@ -34,6 +34,9 @@ Collective.Diffbot.prototype = {
 
   click: function(){
     var self = this;
+    self.context.hide();
+    self.rel.html('<img src="++resource++collective.diffbot.loader.gif" alt="Loading..."/>');
+    self.rel.show();
     var query = {};
     query.url = self.context.attr('href');
     jQuery.getJSON(self.settings.json, query, function(data){
@@ -51,7 +54,7 @@ Collective.Diffbot.prototype = {
     }
 
     var text = data.text;
-    text = text.replace(/\n/g, '<br /><br />');
+    text = text.replace(/\n/g, '</p><p>');
     var p = jQuery('<p>').html(text);
     self.rel.html(p);
   }

@@ -5,8 +5,6 @@ Changelog
 --------------------
 
 * TODO:
-  - Add loading gif when one clicks on diffbot links
-  - Cache: Ramcache
   - Cache: Client's browser/localstorage
 
 * Initial release

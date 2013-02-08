@@ -9,6 +9,7 @@ import json as simplejson
 from Products.Five.browser import BrowserView
 from plone.registry.interfaces import IRegistry
 from collective.diffbot.interfaces import IDiffbotSettings
+from collective.diffbot.cache import ramcache, cacheJsonKey
 
 logger = logging.getLogger('collective.diffbot')
 
@@ -36,8 +37,8 @@ class Diffbot(BrowserView):
                 IRegistry).forInterface(IDiffbotSettings, False)
         return self._settings
 
-    @property
-    def json(self):
+    @ramcache(cacheJsonKey, dependencies=['collective.diffbot'])
+    def json(self, **kwargs):
         """ Get JSON from diffbot
         """
         res = {}
