@@ -60,3 +60,5 @@ class Diffbot(BrowserView):
             return simplejson.dumps(res)
         else:
             return conn.read()
+        finally:
+            conn.close()
