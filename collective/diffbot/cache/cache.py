@@ -3,5 +3,8 @@
 def cacheJsonKey(method, self, *args, **kwargs):
     """ Generate unique cache id
     """
-    name = getattr(self, '__name__', '')
-    return ':'.join((self.context.absolute_url(1), name))
+    return (
+        self.context.absolute_url(1),
+        getattr(self, '__name__', ''),
+        self.request.form
+    )

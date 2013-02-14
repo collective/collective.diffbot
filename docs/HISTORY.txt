@@ -5,6 +5,11 @@ Changelog
 
   - Cache: Client's browser/localstorage
 
+1.1-dev (unreleased)
+--------------------
+* Fix cache key for non-folderish objects
+  [avoinea]
+
 1.0 (2013-02-13)
 ----------------
 * Initial release
